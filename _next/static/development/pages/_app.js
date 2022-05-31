@@ -96,15 +96,52 @@ var getEnglishPhonicErr = function getEnglishPhonicErr(err) {
 
 /***/ }),
 
-/***/ "./action/types.js":
-/*!*************************!*\
-  !*** ./action/types.js ***!
-  \*************************/
-/*! exports provided: GET_USER, GET_USER_SUCCESS, GET_USER_ERR, LOAD_DATASAGA, LOAD_DATASAGA_SUCCESS, LOAD_DATASAGA_ERR, ADD_USER, ADD_USER_SUCCESS, ADD_USER_ERR, DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_ERR, RANDOM_NUMBER, CARD_RESULT_OKCLICK, GET_ENGLISH_STORY, GET_ENGLISH_STORY_SUCCESS, GET_ENGLISH_STORY_ERR, GET_ENGLISH_BOOK, GET_ENGLISH_BOOK_SUCCESS, GET_ENGLISH_BOOK_ERR, GET_ENGLISH_LIST_PHONIC, GET_ENGLISH_LIST_PHONIC_SUCCESS, GET_ENGLISH_LIST_PHONIC_ERR, GET_ENGLISH_PHONIC, GET_ENGLISH_PHONIC_SUCCESS, GET_ENGLISH_PHONIC_ERR */
+/***/ "./action/homeAction.js":
+/*!******************************!*\
+  !*** ./action/homeAction.js ***!
+  \******************************/
+/*! exports provided: getHome, getHomeSuccess, getHomeErr */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHome", function() { return getHome; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHomeSuccess", function() { return getHomeSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHomeErr", function() { return getHomeErr; });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./types */ "./action/types.js");
+
+var getHome = function getHome() {
+  return {
+    type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_HOME"]
+  };
+};
+var getHomeSuccess = function getHomeSuccess(data) {
+  return {
+    type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_HOME_SUCCESS"],
+    data: data
+  };
+};
+var getHomeErr = function getHomeErr(err) {
+  return {
+    type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_HOME_ERR"],
+    err: err
+  };
+};
+
+/***/ }),
+
+/***/ "./action/types.js":
+/*!*************************!*\
+  !*** ./action/types.js ***!
+  \*************************/
+/*! exports provided: GET_HOME, GET_HOME_SUCCESS, GET_HOME_ERR, GET_USER, GET_USER_SUCCESS, GET_USER_ERR, LOAD_DATASAGA, LOAD_DATASAGA_SUCCESS, LOAD_DATASAGA_ERR, ADD_USER, ADD_USER_SUCCESS, ADD_USER_ERR, DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_ERR, RANDOM_NUMBER, CARD_RESULT_OKCLICK, GET_ENGLISH_STORY, GET_ENGLISH_STORY_SUCCESS, GET_ENGLISH_STORY_ERR, GET_ENGLISH_BOOK, GET_ENGLISH_BOOK_SUCCESS, GET_ENGLISH_BOOK_ERR, GET_ENGLISH_LIST_PHONIC, GET_ENGLISH_LIST_PHONIC_SUCCESS, GET_ENGLISH_LIST_PHONIC_ERR, GET_ENGLISH_PHONIC, GET_ENGLISH_PHONIC_SUCCESS, GET_ENGLISH_PHONIC_ERR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_HOME", function() { return GET_HOME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_HOME_SUCCESS", function() { return GET_HOME_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_HOME_ERR", function() { return GET_HOME_ERR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_USER", function() { return GET_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_USER_SUCCESS", function() { return GET_USER_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_USER_ERR", function() { return GET_USER_ERR; });
@@ -131,6 +168,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ENGLISH_PHONIC", function() { return GET_ENGLISH_PHONIC; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ENGLISH_PHONIC_SUCCESS", function() { return GET_ENGLISH_PHONIC_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ENGLISH_PHONIC_ERR", function() { return GET_ENGLISH_PHONIC_ERR; });
+var GET_HOME = 'GET_HOME';
+var GET_HOME_SUCCESS = 'GET_HOME_SUCCESS';
+var GET_HOME_ERR = 'GET_HOME_ERR';
 var GET_USER = 'GET_USER';
 var GET_USER_SUCCESS = 'GET_USER_SUCCESS';
 var GET_USER_ERR = 'GET_USER_ERR';
@@ -240,15 +280,17 @@ var deleteUserFail = function deleteUserFail() {
 /*!*****************!*\
   !*** ./host.js ***!
   \*****************/
-/*! exports provided: host, englishCdn */
+/*! exports provided: host, englishCdn, ndhpCdn */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "host", function() { return host; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "englishCdn", function() { return englishCdn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ndhpCdn", function() { return ndhpCdn; });
 var host = 'http://5cd12f0fd4a78300147be564.mockapi.io';
 var englishCdn = 'https://raw.githubusercontent.com/thanglamhuu/eng-story/master';
+var ndhpCdn = 'https://raw.githubusercontent.com/thanglamhuu/ndhpdb.github.io/master';
 
 /***/ }),
 
@@ -18989,7 +19031,7 @@ exports.devToolsEnhancer = (
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: default, CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21939,6 +21981,73 @@ function englishReducer() {
 
 /***/ }),
 
+/***/ "./reducer/homeReducer.js":
+/*!********************************!*\
+  !*** ./reducer/homeReducer.js ***!
+  \********************************/
+/*! exports provided: initialState, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return homeReducer; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../action/types */ "./action/types.js");
+
+
+
+
+
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+
+
+var initialState = {
+  data: null,
+  type: null,
+  err: null
+};
+function homeReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _action_types__WEBPACK_IMPORTED_MODULE_7__["GET_HOME_SUCCESS"]:
+      return _objectSpread({}, state, {
+        type: null,
+        data: action.data
+      });
+
+    case _action_types__WEBPACK_IMPORTED_MODULE_7__["GET_HOME_ERR"]:
+      return _objectSpread({}, state, {
+        type: null,
+        err: action.err
+      });
+
+    default:
+      return state;
+  }
+}
+
+/***/ }),
+
 /***/ "./reducer/rootReducer.js":
 /*!********************************!*\
   !*** ./reducer/rootReducer.js ***!
@@ -21951,12 +22060,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _userReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./userReducer */ "./reducer/userReducer.js");
 /* harmony import */ var _englishReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./englishReducer */ "./reducer/englishReducer.js");
+/* harmony import */ var _homeReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./homeReducer */ "./reducer/homeReducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   userReducer: _userReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  englishReducer: _englishReducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  englishReducer: _englishReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  homeReducer: _homeReducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -22292,6 +22404,105 @@ function englishStorySaga() {
 
 /***/ }),
 
+/***/ "./saga/homeSaga.js":
+/*!**************************!*\
+  !*** ./saga/homeSaga.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _action_homeAction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../action/homeAction */ "./action/homeAction.js");
+/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../action/types */ "./action/types.js");
+/* harmony import */ var _host__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../host */ "./host.js");
+
+
+var _marked =
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(getHomeSaga),
+    _marked2 =
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(homeSaga);
+
+
+
+
+
+
+var apiGetHome = "".concat(_host__WEBPACK_IMPORTED_MODULE_5__["ndhpCdn"], "/homePageData.json"); // put = vs dispatch
+
+function getHomeSaga() {
+  var res, data;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function getHomeSaga$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          if (false) {}
+
+          _context.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["take"])(_action_types__WEBPACK_IMPORTED_MODULE_4__["GET_HOME"]);
+
+        case 3:
+          _context.prev = 3;
+          console.log(apiGetHome);
+          _context.next = 7;
+          return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(apiGetHome);
+
+        case 7:
+          res = _context.sent;
+          data = res.data;
+          _context.next = 11;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])(_action_homeAction__WEBPACK_IMPORTED_MODULE_3__["getHomeSuccess"](data));
+
+        case 11:
+          _context.next = 18;
+          break;
+
+        case 13:
+          _context.prev = 13;
+          _context.t0 = _context["catch"](3);
+          console.log(_context.t0);
+          _context.next = 18;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])(_action_homeAction__WEBPACK_IMPORTED_MODULE_3__["getHomeErr"](_context.t0));
+
+        case 18:
+          _context.next = 0;
+          break;
+
+        case 20:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _marked, null, [[3, 13]]);
+}
+
+function homeSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function homeSaga$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(getHomeSaga);
+
+        case 2:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _marked2);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (homeSaga); //takeLatest:   chỉ cho phép một hàm xử lý có thể chạy tại một thời điểm
+
+/***/ }),
+
 /***/ "./saga/rootSaga.js":
 /*!**************************!*\
   !*** ./saga/rootSaga.js ***!
@@ -22306,11 +22517,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
 /* harmony import */ var _userSaga__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userSaga */ "./saga/userSaga.js");
 /* harmony import */ var _englishSaga__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./englishSaga */ "./saga/englishSaga.js");
+/* harmony import */ var _homeSaga__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./homeSaga */ "./saga/homeSaga.js");
 
 
 var _marked =
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(rootSaga);
+
 
 
 
@@ -22332,11 +22545,16 @@ function rootSaga() {
 
         case 6:
           _context.t2 = _context.sent;
-          _context.t3 = [_context.t1, _context.t2];
-          _context.next = 10;
-          return (0, _context.t0)(_context.t3);
+          _context.next = 9;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(_homeSaga__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
-        case 10:
+        case 9:
+          _context.t3 = _context.sent;
+          _context.t4 = [_context.t1, _context.t2, _context.t3];
+          _context.next = 13;
+          return (0, _context.t0)(_context.t4);
+
+        case 13:
         case "end":
           return _context.stop();
       }
